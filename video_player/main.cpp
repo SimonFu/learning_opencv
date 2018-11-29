@@ -10,6 +10,12 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
+    if(argc < 2)
+    {
+        qInfo() << "Usage: " << argv[0] << " [video file path]";
+        return -1;
+    }
+
     VideoCapture capture(argv[1]);
     namedWindow("Video player");
 
