@@ -23,9 +23,6 @@ int main(int argc, char *argv[])
     Mat src = imdecode(vector<char>(ba.begin(), ba.end()), IMREAD_COLOR);
     imshow("Origin image", src);
 
-    int height = src.rows;
-    int width = src.cols;
-
     Mat yuvImage(src.size(), CV_8UC3);
     cvtColor(src, yuvImage, COLOR_RGB2YUV);
 
