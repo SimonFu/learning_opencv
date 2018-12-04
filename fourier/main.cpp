@@ -28,7 +28,6 @@ int main(int argc, char *argv[])
     int m = getOptimalDFTSize(src.rows);
     int n = getOptimalDFTSize(src.cols);
     copyMakeBorder(src, padded, 0, m - src.rows, 0, n - src.cols, BORDER_CONSTANT, Scalar::all(0));
-    //imshow("Padded image", padded);
 
     Mat planes[] = {Mat_<float>(padded), Mat::zeros(padded.size(), CV_32F)};
     Mat complexImg;
